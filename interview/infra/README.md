@@ -1,6 +1,5 @@
 
-**The Terraform script in this repo deploys several resources within AWS, structured for a serverless application with monitoring and alerting capabilities. Here's a breakdown of the resources and their purposes:
-**
+**The Terraform script in this repo deploys several resources within AWS, structured for a serverless application with monitoring and alerting capabilities. Here's a breakdown of the resources and their purposes:**
 
 * Random Pet Resource: Generates a random name for an S3 bucket, used to uniquely name the bucket.
 
