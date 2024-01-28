@@ -41,7 +41,8 @@
 
 **This script effectively creates a serverless application architecture with an AWS Lambda function, an S3 bucket for code storage, API Gateway for invocation, and CloudWatch for logging and monitoring. Additionally, it implements an alerting mechanism using SNS and CloudWatch Alarms.**
 
-```To reproduce the task, you will need the following prerequisites:
+```
+To reproduce the task, you will need the following prerequisites:
 
 1. AWS account, a Access Key and Secret Access Key.
 2. Terraform Cloud account. (Free and awesome). (https://developer.hashicorp.com/terraform/tutorials/cloud-get-started)
