@@ -153,7 +153,7 @@ resource "aws_apigatewayv2_integration" "hello_world_app" {
 resource "aws_apigatewayv2_route" "hello_world_app" {
   api_id = aws_apigatewayv2_api.lambda.id # Reference to the created API Gateway
 
-  route_key = "GET /" # Define the route key (HTTP method and path)
+  route_key = "$default" # Define the route key (HTTP method and path)
   target    = "integrations/${aws_apigatewayv2_integration.hello_world_app.id}" # Target integration for this route
 }
 
