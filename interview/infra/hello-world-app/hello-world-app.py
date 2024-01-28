@@ -2,6 +2,8 @@ import json
 from datetime import datetime
 
 def handler(event, context):
+    #raise Exception("Test exception for CloudWatch alarm")
+
     # Get the current date and time
     current_time = datetime.now().isoformat()
 

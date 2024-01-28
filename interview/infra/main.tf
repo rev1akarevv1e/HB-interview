@@ -173,3 +173,36 @@ resource "aws_lambda_permission" "api_gw" {
 
   source_arn = "${aws_apigatewayv2_api.lambda.execution_arn}/*/*" # ARN of the API Gateway to allow invocation from
 }
+
+############################
+# Create CloudWatch Alerting
+############################
+
+# Create SNS Topic
+resource "aws_sns_topic" "alarm_topic" {
+  name = "Hello-World-App"  # Name of the SNS topic
+}
+
+# Subscribe to SNS Topic
+resource "aws_sns_topic_subscription" "email_subscription" {
+  topic_arn = aws_sns_topic.alarm_topic.arn
+  protocol  = "email"
+  endpoint  = "somecallme_d@icloud.com"  # Your email address
+}
+
+# Create CloudWatch Alarms
+resource "aws_cloudwatch_metric_alarm" "lambda_errors" {
+  alarm_name          = "lambda-errors-alarm"
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = "1"
+  metric_name         = "Errors"
+  namespace           = "AWS/Lambda"
+  period              = "60"
+  statistic           = "Sum"
+  threshold           = "1"
+  alarm_description   = "This metric monitors lambda errors"
+  dimensions = {
+    FunctionName = aws_lambda_function.hello_world_app.function_name
+  }
+  alarm_actions = [aws_sns_topic.alarm_topic.arn]
+}
