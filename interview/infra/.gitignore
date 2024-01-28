@@ -12,3 +12,5 @@ terraform.rc
 hello-world.zip
 response.json
 *.zip
+**/modules/*
+*.tf.bak
