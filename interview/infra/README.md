@@ -47,5 +47,5 @@ To reproduce the task, you will need the following prerequisites:
 1. AWS account, a Access Key and Secret Access Key.
 2. Terraform Cloud account. (Free and awesome). (https://developer.hashicorp.com/terraform/tutorials/cloud-get-started)
 
-NOTE: For a quick test, you can clone the repo and run it from your local machine.```
+NOTE: For a quick test, you can clone the repo and run it from your local machine.
 
